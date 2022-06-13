@@ -79,4 +79,24 @@ module('Integration | Component | tui-editor', function (hooks) {
 
     assert.deepEqual(this.model, { text: 'bar' });
   });
+
+  test('could use a selector on BS form element', async function (assert) {
+    this.model = { text: 'foo' };
+
+    this.onChangeHandler = (text) => {
+      this.changeset.set('text', text);
+    };
+
+    await render(hbs`
+      <BsForm @model={{this.model}} as |form|>
+        <form.element @property="text" data-test-form-element as |el|>
+          <TuiEditor @onChange={{el.setValue}} @value={{el.value}} />
+        </form.element>
+      </BsForm>
+    `);
+
+    await fillInEditor('[data-test-form-element]', 'bar');
+
+    assert.deepEqual(this.model, { text: 'bar' });
+  });
 });
