@@ -99,4 +99,21 @@ module('Integration | Component | tui-editor', function (hooks) {
 
     assert.deepEqual(this.model, { text: 'bar' });
   });
+
+  test('it works with @editType="wysiwyg"', async function (assert) {
+    let content = '';
+
+    this.onChangeHandler = (text) => {
+      console.log('onChangeHandler', text);
+      content = text;
+    };
+
+    await render(hbs`
+      <TuiEditor data-test-editor @onChange={{this.onChangeHandler}} @editType="wysiwyg" />
+    `);
+
+    await fillInEditor('[data-test-editor]', 'foo');
+
+    assert.strictEqual(content, 'foo');
+  });
 });
