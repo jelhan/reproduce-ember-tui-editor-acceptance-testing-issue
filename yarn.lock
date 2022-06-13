@@ -4790,6 +4790,14 @@ ember-auto-import@^2.2.3, ember-auto-import@^2.2.4, ember-auto-import@^2.3.0, em
     typescript-memoize "^1.0.0-alpha.3"
     walk-sync "^3.0.0"
 
+ember-bootstrap-changeset-validations@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ember-bootstrap-changeset-validations/-/ember-bootstrap-changeset-validations-5.0.0.tgz#08be5cc646727bf9538b90a60d8e21d8061572e3"
+  integrity sha512-VYashGWE1uWdkFRfNFGkwP5LcSNfI33F7jRcZfIIFPw+jp/KXqV5DjvGrLx+hKBh998PC+O8t8gF5WhInbjtfQ==
+  dependencies:
+    ember-cli-babel "^7.26.11"
+    ember-cli-htmlbars "^6.0.1"
+
 ember-bootstrap@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/ember-bootstrap/-/ember-bootstrap-5.1.1.tgz#dfc9775eda7a8b1639445d6ec03baf9df7814681"
